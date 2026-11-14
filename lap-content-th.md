@@ -14,7 +14,7 @@ Site: https://lap-frontend-hazel.vercel.app
 | What | Change |
 |---|---|
 | Shop name | Replace "L.A.P. ศูนย์ซ่อมสีตัวถังมาตรฐาน" and "ซากุระ การาจ" everywhere with 「LAP ลีออโต้เพ้นท์」: header logo text, `<title>`, meta description, image alt text, footer, © line |
-| Main phone | **「081-542-8799」**: use this for every call button, the sticky header button and `tel:0815428799` links. This is the owner's number (ลุงไชยวัฒน์), so it must be the most visible number |
+| Main phone | **「081-542-8799」**: use this for every call button, the sticky header button and `tel:0815428799` links. This is the owner's number (เสี่ยลี), so it must be the most visible number |
 | Second phone | 「099-396-9187」: show only in the map/contact section and the footer |
 | Remove old numbers | Delete 089-500-8567 and 02-120-6629 everywhere, including meta description and alt text |
 | LINE button | Current link `line.me/R/ti/p/~0895008567` uses the old number. **Ask for the new LINE ID.** Until we have it, change the LINE buttons to call 081-542-8799 |
@@ -95,7 +95,7 @@ This section should feel like a family business, not a corporate one. Use the ne
 - **Big photo (left):** `photos/team-briefing-1.jpg`
 - **Owner quote card (right, orange card like now):**
   - Quote: 「รถลูกค้าก็เหมือนรถเรา ไม่เนียนไม่ส่ง」
-  - Name: 「ไชยวัฒน์ กุ้งแก้ว · เจ้าของอู่」 *(get the owner's OK on the quote before launch)*
+  - Name: 「เสี่ยลี · เจ้าของอู่」 *(get the owner's OK on the quote before launch)*
 - **Gallery row (4 small photos with Thai captions):**
 
 | Photo | Caption |
