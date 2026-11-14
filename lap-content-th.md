@@ -1,117 +1,176 @@
-# LAP ลีออโต้เพ้นท์ – เนื้อหาเว็บไซต์ใหม่ (สำหรับ dev)
+# LAP ลีออโต้เพ้นท์: Website Content Brief (for dev)
 
-เว็บ: https://lap-frontend-hazel.vercel.app
+Site: https://lap-frontend-hazel.vercel.app
 
-## ส่วนที่ 1: รายการแก้ (สั้นๆ)
-
-**ลูกค้าขอแก้**
-- ชื่ออู่ → **LAP ลีออโต้เพ้นท์** ทุกจุด (header, `<title>`, meta, alt รูป, footer)
-- เบอร์ → **081-542-8799** และ **099-396-9187** (แทน 089-500-8567 / 02-120-6629 รวมลิงก์ `tel:`)
-- ลบ **LMG ประกันภัย** (`lmg.png`) ทั้งใน Hero และส่วนเคลม แล้วแก้ตัวเลขจำนวนบริษัท
-- LINE ตอนนี้ยังเป็น `~0895008567` → ขอ LINE ID ใหม่จากอู่
-
-**แก้เนื้อหา**
-- รับซ่อม **ทุกยี่ห้อ** → เปลี่ยนชิป "ชำนาญ Benz · Alphard" และส่วน "ชำนาญรถหรู" เป็นส่วน "รับทุกยี่ห้อ" (ด้านล่าง)
-- ลบป้ายโน้ตร่างทุกอัน ("ฉบับร่าง…", "รอ…", "ตัวอย่าง…")
-- ซ่อนโปรโมชั่นไว้ก่อนจนกว่าจะได้โปรจริง
-- ผลงาน: เลิกใช้รูปสต็อก `found/*` ให้ใช้รูป Jaguar ของอู่แทน และลบข้อความสอนเลื่อนปุ่ม
-- เปลี่ยนข้อความทุกส่วนตามด้านล่าง ช่อง `[ ]` ให้ถามอู่ ถ้ายังไม่ได้คำตอบก็ตัดทิ้ง
+**How to read this file**
+- Instructions are in English. **Text in `「 」` brackets goes on the website exactly as written (Thai).** Don't translate or rephrase it.
+- New photos are in `/photos` in this repo. Copy them to `public/images/garage/`.
+- `[ ]` = info still missing. If it isn't filled in before launch, **delete that whole line**. Don't put placeholder text on the live site.
 
 ---
 
-## ส่วนที่ 2: เนื้อหาใหม่
+## 1. Global changes (do these first)
 
-### Hero
-- **ป้ายเล็ก:** อู่เคาะพ่นสี · บางใหญ่ นนทบุรี
-- **หัวข้อ:** ชนมา เฉี่ยวมา
-  **ไฮไลต์:** ซ่อมจบที่ LAP
-- **รอง:** เคาะ พ่น อบสี เคลมประกัน รับทุกยี่ห้อ
-  ถ่ายรูปรอยส่งไลน์มา ช่างประเมินราคาให้ฟรี
-- **ปุ่ม:** `โทร 081-542-8799` · `ส่งรูปทางไลน์`
-- **ชิป:** เปิด จ.–ส. 8 โมง – 5 โมงเย็น · บางแม่นาง บางใหญ่ · รับทุกยี่ห้อ รวมรถ EV
-- **รูป:** `paint-booth-red-side.jpg`
+| What | Change |
+|---|---|
+| Shop name | Replace "L.A.P. ศูนย์ซ่อมสีตัวถังมาตรฐาน" and "ซากุระ การาจ" everywhere with 「LAP ลีออโต้เพ้นท์」: header logo text, `<title>`, meta description, image alt text, footer, © line |
+| Main phone | **「081-542-8799」**: use this for every call button, the sticky header button and `tel:0815428799` links. This is the owner's number (ลุงไชยวัฒน์), so it must be the most visible number |
+| Second phone | 「099-396-9187」: show only in the map/contact section and the footer |
+| Remove old numbers | Delete 089-500-8567 and 02-120-6629 everywhere, including meta description and alt text |
+| LINE button | Current link `line.me/R/ti/p/~0895008567` uses the old number. **Ask for the new LINE ID.** Until we have it, change the LINE buttons to call 081-542-8799 |
+| Insurance | Remove LMG (`lmg.png`) from the hero card and the claims section. Update the company count to match the logos left |
+| Brands | Remove the "ชำนาญ Benz · Alphard" chip and the whole "ชำนาญรถหรู" section. Replace with the new "All brands" section (section 2.4) |
+| Draft labels | Delete every small pink note ("ฉบับร่าง…", "รอ…", "ตัวอย่าง…") |
+| Promotions | Hide the whole promotions section until the owner gives real promos |
+| Stock photos | Stop using `found/damaged-front.jpg` and `found/headlight.webp`. Only use the shop's real photos |
 
-### จุดเด่น (ส่วนใหม่ ต่อจาก Hero)
-- **บอกราคาก่อนซ่อม**: รู้ราคาก่อน ตกลงแล้วค่อยเริ่มงาน
-- **ห้องอบสีระบบปิด**: ฝุ่นไม่ลง สีเรียบ เงาเนียน
-- **ผสมสีเองในอู่**: Glasurit / Axalta ผสมตามรหัสสีรถ สีไม่ด่าง ไม่เป็นขอบ
-- **รับประกันงาน**: งานสีรับประกัน [ ] ปี
+---
 
-### บริการ
-**หัวข้อ:** งานหนัก งานเบา เราทำหมด
-**รอง:** ตั้งแต่รอยขูดนิดเดียว ไปจนถึงชนหนักต้องดึงแท่น
+## 2. Sections (top to bottom)
 
-1. **เคาะ ดึง ซ่อมตัวถัง** (`body-shell-rebuild.jpg`)
-   บุบ ยุบ บิด ดึงกลับเข้ารูปเดิม ร่องประตู ฝากระโปรง ต้องได้ระยะเท่ากัน กันชนแตกก็ซ่อมหรือเปลี่ยนให้
-2. **ทำสี** (`paint-booth-red-front.jpg`)
-   ทำสีเฉพาะจุด ทำสีทั้งชิ้น หรือทำสีรอบคัน เก็บงานละเอียด ขัดเงาให้ก่อนส่งรถ
-3. **ซ่อมเคลมประกัน** (`inspection.jpg`)
-   มีใบเคลมก็เอารถเข้ามาได้เลย ส่งเรื่องและคุยกับประกันให้ทั้งหมด
+### 2.1 Hero
+- **Background photo:** `photos/paint-booth-porsche-spraying.jpg` (new, replaces `paint-booth-red-side.jpg`). Vertical photo, so use `object-position: center 60%` on desktop.
+- Small badge: 「อู่เคาะพ่นสี · บางใหญ่ นนทบุรี」
+- H1 line 1: 「ชนมา เฉี่ยวมา」
+- H1 line 2 (orange highlight): 「ซ่อมจบที่ LAP」
+- Subtitle: 「เคาะ พ่น อบสี เคลมประกันหรือเงินสด รับทุกยี่ห้อ」
+- Subtitle line 2: 「ไม่แพงอย่างที่คิด โทรถามได้เลย」 *(from the owner's own FB posts, so keep this wording)*
+- Button 1 (primary, big): 「โทร 081-542-8799」 → `tel:0815428799`
+- Button 2: 「ส่งรูปทางไลน์」 → LINE (see LINE note above)
+- Chips: 「เปิด จ.–ส. 08:00–17:00」 · 「บางแม่นาง บางใหญ่」 · 「รับทุกยี่ห้อ รวมรถ EV」
 
-### รับทุกยี่ห้อ (แทนส่วน "ชำนาญรถหรู")
-**หัวข้อ:** รถญี่ปุ่น รถยุโรป รถไฟฟ้า ซ่อมได้ทุกคัน
-**รอง:** เก๋ง กระบะ SUV รถตู้ จะรถบ้านหรือรถหรูก็ดูแลเท่ากันทุกคัน
-**แถบยี่ห้อ (ตัวอักษรหรือโลโก้):**
-Toyota · Honda · Isuzu · Mazda · Nissan · Mitsubishi · Mercedes-Benz · BMW · Volvo · BYD · Tesla · MG · ORA · และยี่ห้ออื่นๆ
-**การ์ด (ใช้รูปเดิม):**
-- **รถยุโรป** (`benz-repair.jpg`): สีเงิน สีดำ สีมุก ผสมเทียบสีทีละคันให้กลืนกับสีเดิม
-- **รถตู้ / SUV** (`yard.jpg`): Alphard, Vellfire, Fortuner คันใหญ่แค่ไหนก็เข้าห้องอบได้
-- **รถไฟฟ้า EV**: BYD, Tesla, MG, ORA ซ่อมตัวถังและทำสีได้ เคลมประกันได้เหมือนรถทั่วไป *(ยังไม่มีรูป EV ให้ขอรูปจากอู่)*
+### 2.2 Highlights strip (NEW, 4 small cards under hero)
+| Icon idea | Title | Text |
+|---|---|---|
+| receipt | 「บอกราคาก่อนซ่อม」 | 「รู้ราคาก่อน ตกลงแล้วค่อยเริ่มงาน」 |
+| spray | 「ห้องอบสีระบบปิด」 | 「ฝุ่นไม่ลง สีเรียบ เงาเนียน」 |
+| palette | 「ผสมสีเองในอู่」 | 「Glasurit / Axalta ผสมตามรหัสสีรถ สีไม่ด่าง ไม่เป็นขอบ」 |
+| check | 「เช็คทุกจุดก่อนส่งมอบ」 | 「ดูงานกับลูกค้าให้เรียบร้อยก่อนส่งรถทุกคัน」 |
 
-### เคลมประกัน
-**หัวข้อ:** เคลมที่นี่ ไม่ต้องวิ่งเรื่องเอง
-**รอง:** แจ้งประกันว่าจะซ่อมที่ LAP ลีออโต้เพ้นท์ ที่เหลือเราจัดการให้
-รับทั้งเคลมสดและเคลมแห้ง [ยืนยันกับอู่]
+### 2.3 Services (3 cards, keep current layout)
+- Section label: 「บริการของเรา」
+- H2: 「งานหนัก งานเบา เราทำหมด」
+- Sub: 「ตั้งแต่รอยขูดนิดเดียว ไปจนถึงชนหนักต้องดึงแท่น」
 
-**โลโก้:** [จำนวนหลังตัด LMG] บริษัท + ป้าย "อู่ในเครือรู้ใจ"
+| Card | Photo | Title | Text |
+|---|---|---|---|
+| 1 | `body-shell-rebuild.jpg` (keep) | 「เคาะ ดึง ซ่อมตัวถัง」 | 「บุบ ยุบ บิด ดึงกลับเข้ารูปเดิม ร่องประตู ฝากระโปรง ต้องได้ระยะเท่ากัน กันชนแตกก็ซ่อมหรือเปลี่ยนให้」 |
+| 2 | `photos/fb-paint-booth-sedan-primer.jpg` (new) | 「ทำสีรถยนต์」 | 「ทำสีเฉพาะจุด ทั้งชิ้น หรือทำสีรอบคัน เก็บงานละเอียด ขัดเงาให้ก่อนส่งรถ」 |
+| 3 | `inspection.jpg` (keep) | 「เคลมประกัน / เงินสด」 | 「มีใบเคลมก็เอารถเข้ามาได้เลย เราคุยกับประกันให้ ไม่มีประกันก็จ่ายเงินสดได้ บอกราคาก่อนทุกครั้ง」 |
 
-**ขั้นตอน:**
-1. **แจ้งเคลม**: โทรแจ้งประกัน จดเลขเคลมไว้
-2. **เอารถเข้าอู่**: ช่างเช็คความเสียหาย ถ่ายรูปเก็บไว้
-3. **รออนุมัติ**: อู่ส่งราคาให้ประกันเอง ไม่ต้องตามเรื่อง
-4. **ซ่อมเสร็จ รับรถ**: ดูงานกับช่างให้พอใจก่อนเซ็นรับ
+### 2.4 All brands (NEW, replaces "ชำนาญรถหรู")
+- Section label: 「รับทุกยี่ห้อ」
+- H2: 「รถญี่ปุ่น รถยุโรป รถไฟฟ้า ซ่อมได้ทุกคัน」
+- Sub: 「เก๋ง กระบะ SUV รถตู้ จะรถบ้านหรือรถหรูก็ดูแลเท่ากันทุกคัน」
+- **Brand row** (plain text pills, or grey logos if we get them):
+  「Toyota · Honda · Isuzu · Mazda · Nissan · Mitsubishi · Mercedes-Benz · BMW · Volvo · Porsche · BYD · Tesla · MG · ORA · และยี่ห้ออื่นๆ」
+- **3 cards:**
 
-**เอกสารที่ต้องใช้:** บัตรประชาชน · ใบขับขี่ · สำเนาเล่มทะเบียน · กรมธรรม์ · ใบเคลม · ใบแจ้งความ (ถ้าประกันขอ)
-เอกสารไม่ครบก็โทรถามก่อนได้
+| Photo | Title | Text |
+|---|---|---|
+| `benz-repair.jpg` (keep) | 「รถยุโรป」 | 「สีเงิน สีดำ สีมุก ผสมเทียบสีทีละคันให้กลืนกับสีเดิม」 |
+| `photos/tow-truck-van-arrival-front.jpg` (new) | 「รถตู้ / SUV」 | 「Alphard, Vellfire, Fortuner คันใหญ่แค่ไหนก็เข้าห้องอบได้」 |
+| `photos/ev-workshop-floor.jpg` (new) | 「รถไฟฟ้า EV」 | 「ซ่อมรถไฟฟ้าได้มาตรฐาน ทั้งงานตัวถังและงานสี เคลมประกันได้เหมือนรถทั่วไป」 |
 
-### เกี่ยวกับอู่
-**หัวข้อ:** เจ้าของดูงานเองทุกคัน
-**รูปใหญ่:** `owner-amg-cls.jpg`
-**คำพูดเจ้าของ:** "รถลูกค้าก็เหมือนรถเรา ไม่เนียนไม่ส่ง" – [ชื่อเจ้าของ] *(ให้เจ้าของอนุมัติก่อน)*
-**ข้อความ:** ทำงานสีมา [ ] ปี ช่าง [ ] คน ห้องผสมสีกับห้องอบสีอยู่ในอู่ ทำครบในที่เดียว ไม่ต้องส่งรถไปทำที่อื่น
-**แกลเลอรี:** `team-staff.jpg` ทีมช่าง · `paint-mixing-axalta.jpg` ห้องผสมสี · `workshop-wide.jpg` ในอู่ · `handover.jpg` ส่งรถ
+### 2.5 Insurance claims (keep layout, change text)
+- Section label: 「งานเคลมประกัน」
+- H2: 「เคลมที่นี่ ไม่ต้องวิ่งเรื่องเอง」
+- Sub: 「แจ้งประกันว่าจะซ่อมที่ LAP ลีออโต้เพ้นท์ ที่เหลือเราจัดการให้」
+- Logos: all current ones **minus LMG**. Count text: 「รับเคลม [count] บริษัท」. Show Roojai as a separate badge: 「อู่ในเครือรู้ใจ」
+- **Steps: cut from 5 to 4:**
+  1. 「แจ้งเคลม」: 「โทรแจ้งประกัน จดเลขเคลมไว้」
+  2. 「เอารถเข้าอู่」: 「ช่างเช็คความเสียหาย ถ่ายรูปเก็บไว้」
+  3. 「รออนุมัติ」: 「อู่ส่งราคาให้ประกันเอง ไม่ต้องตามเรื่อง」
+  4. 「ซ่อมเสร็จ รับรถ」: 「ดูงานกับช่างให้พอใจก่อนเซ็นรับ」
+- Documents title: 「เอกสารที่ต้องใช้」
+- Documents list: 「บัตรประชาชน · ใบขับขี่ · สำเนาเล่มทะเบียน · กรมธรรม์ · ใบเคลม · ใบแจ้งความ (ถ้าประกันขอ)」
+- Under list: 「เอกสารไม่ครบ โทรถามก่อนได้ 081-542-8799」
 
-### ขั้นตอนงานสี
-**หัวข้อ:** กว่าจะเงาได้ขนาดนี้
-1. **รับรถ** (`jaguar-arrival-tow.jpg`): ขับมาไม่ได้ เรียกรถสไลด์ไปรับได้
-2. **ลงพื้น** (`jaguar-primer-booth.jpg`): ขัดสีเก่า โป๊ว ลงพื้น เตรียมผิวให้เรียบก่อน
-3. **พ่น อบ ขัดเงา** (`paint-gloss-red.jpg`): พ่นสีจริง เคลียร์ทับ อบให้แห้งสนิท ขัดเงาแล้วประกอบกลับ
+### 2.6 Our team (REPLACES "อู่จริง ทีมช่างจริง" / owner quote block)
+This section should feel like a family business, not a corporate one. Use the new photos.
 
-### ผลงาน
-**หัวข้อ:** งานจริงจากในอู่
-**คำบรรยาย:** Jaguar คันนี้ชนมา ยกขึ้นสไลด์เข้าอู่ เคาะตัวถังและทำสีใหม่ทั้งคัน
-*(ขอรูปตอนเสร็จของคันนี้ ถ้ายังไม่มีให้ใช้แกลเลอรีแทนสไลเดอร์)*
+- Section label: 「ทีมงาน LAP」
+- H2: 「ทีมงานพร้อมให้บริการ」 *(the owner's own phrase from FB)*
+- Sub: 「ช่างเคาะ ช่างสี ช่างประกอบ ประชุมงานกันทุกเช้า ทุกคันมีคนรับผิดชอบชัดเจน」
+- **Big photo (left):** `photos/team-briefing-1.jpg`
+- **Owner quote card (right, orange card like now):**
+  - Quote: 「รถลูกค้าก็เหมือนรถเรา ไม่เนียนไม่ส่ง」
+  - Name: 「ไชยวัฒน์ กุ้งแก้ว · เจ้าของอู่」 *(get the owner's OK on the quote before launch)*
+- **Gallery row (4 small photos with Thai captions):**
 
-### คำถามที่พบบ่อย
-**หัวข้อ:** ถามบ่อย
-- **ต้องนัดก่อนไหม?** ไม่ต้อง เข้ามาได้เลยในเวลาทำการ แต่โทรมาบอกก่อนจะได้ไม่ต้องรอ
-- **ขอราคาก่อนได้ไหม?** ได้ ส่งรูปทางไลน์มา ช่างบอกราคาคร่าวๆ ให้ฟรี ราคาจริงแจ้งอีกทีตอนเห็นรถ
-- **ซ่อมกี่วันเสร็จ?** แผลเล็ก [ ] วัน ชนหนัก [ ] วัน ช่างบอกวันรับรถให้ตั้งแต่ตอนประเมิน
-- **ไม่มีประกัน จ่ายเงินสดได้ไหม?** ได้ บอกราคาก่อนเริ่มงานเหมือนกัน
-- **รถไฟฟ้ารับซ่อมไหม?** รับ BYD, Tesla, MG, ORA และยี่ห้ออื่นๆ
-- **ระหว่างซ่อมจะรู้ได้ยังไงว่าถึงไหนแล้ว?** อู่ส่งรูปความคืบหน้าทางไลน์ให้เป็นระยะ
+| Photo | Caption |
+|---|---|
+| `photos/fb-team-briefing-3.jpg` | 「ประชุมงานเช้า」 |
+| `paint-mixing-axalta.jpg` (keep) | 「ห้องผสมสี」 |
+| `photos/team-briefing-2.jpg` | 「ทีมช่าง」 |
+| `photos/fb-final-check-before-delivery.jpg` | 「เช็คงานก่อนส่งรถ」 |
 
-### แผนที่
-**หัวข้อ:** มาที่อู่
-98/63 หมู่ 4 ต.บางแม่นาง อ.บางใหญ่ นนทบุรี 11140
-จุดสังเกต: [ใกล้ … / ซอย …]
-โทร 081-542-8799 · 099-396-9187
-เปิด จันทร์–เสาร์ 08:00–17:00 · หยุดวันอาทิตย์
+- **Team trip strip (NEW, small block at bottom of this section):**
+  - Photo: `photos/team-trip-group-1.jpg` (wide, rounded corners). Optional: make it a mini carousel with `team-trip-group-2.jpg` and `team-trip-candid.jpg`
+  - Title: 「ทริปพนักงานประจำปี」
+  - Text: 「ทำงานหนักทั้งปี ก็ต้องพักผ่อนด้วยกัน ทีมที่มีความสุข งานก็ออกมาดี」
+  - ⚠️ The shop sign in these photos still shows the old name and number. That's fine for a team photo, but **don't use these as the location/shopfront photo**
 
-### แถบปิดท้าย
-**หัวข้อ:** รถเป็นรอย อย่าปล่อยไว้นาน
-**รอง:** ถ่ายรูปส่งไลน์มา ช่างประเมินให้ฟรี
-**ปุ่ม:** `ส่งรูปทางไลน์` · `โทร 081-542-8799`
+### 2.7 How we paint (keep 3 steps, swap photos + text)
+- H2: 「กว่าจะเงาได้ขนาดนี้」
 
-### Footer
-LAP ลีออโต้เพ้นท์ · เคาะ พ่น อบสี เคลมประกัน · รับทุกยี่ห้อ · บางใหญ่ นนทบุรี
+| Step | Photo | Title | Text |
+|---|---|---|---|
+| 1 | `photos/tow-truck-van-arrival-rear.jpg` (new) | 「รับรถ」 | 「ขับมาไม่ได้ เรียกรถสไลด์ไปรับได้」 |
+| 2 | `jaguar-primer-booth.jpg` (keep) | 「ลงพื้น」 | 「ขัดสีเก่า โป๊ว ลงพื้น เตรียมผิวให้เรียบก่อน」 |
+| 3 | `photos/paint-booth-porsche-spraying.jpg` (new) | 「พ่น อบ ขัดเงา」 | 「พ่นสีจริง เคลียร์ทับ อบให้แห้งสนิท ขัดเงาแล้วประกอบกลับ」 |
+
+### 2.8 Our work (before/after)
+- **Remove the slider and its instruction text** (stock photos, different cars).
+- Replace with a simple photo grid, H2: 「งานจริงจากในอู่」
+- Photos: `jaguar-arrival-tow.jpg`, `jaguar-primer-booth.jpg`, `photos/fb-paint-booth-sedan-primer.jpg`, `photos/fb-final-check-before-delivery.jpg`
+- Caption under grid: 「รูปจริงทุกรูป ไม่ใช่ภาพประกอบ」
+
+### 2.9 FAQ (all items must have an answer)
+- H2: 「ถามบ่อย」
+
+| Question | Answer |
+|---|---|
+| 「ต้องนัดก่อนไหม?」 | 「ไม่ต้อง เข้ามาได้เลยในเวลาทำการ แต่โทรบอกก่อนจะได้ไม่ต้องรอ」 |
+| 「ขอราคาก่อนได้ไหม?」 | 「ได้ ส่งรูปมาให้ดู ช่างบอกราคาคร่าวๆ ให้ฟรี ราคาจริงแจ้งอีกทีตอนเห็นรถ」 |
+| 「ไม่มีประกัน จ่ายเงินสดได้ไหม?」 | 「ได้ เคลมประกันหรือเงินสดก็ซ่อมได้ บอกราคาก่อนเริ่มงานทุกครั้ง」 |
+| 「รถไฟฟ้ารับซ่อมไหม?」 | 「รับ BYD, Tesla, MG, ORA และยี่ห้ออื่นๆ ทั้งงานตัวถังและงานสี」 |
+| 「ซ่อมกี่วันเสร็จ?」 | 「แผลเล็ก [ ] วัน ชนหนัก [ ] วัน ช่างบอกวันรับรถให้ตั้งแต่ตอนประเมิน」 |
+| 「รถขับมาไม่ได้ทำยังไง?」 | 「โทรมา เราส่งรถสไลด์ไปรับให้」 |
+| 「มีรับประกันงานไหม?」 | 「งานสีรับประกัน [ ] ปี」 |
+
+### 2.10 Map / Contact
+- H2: 「มาที่อู่」
+- Address: 「98/63 หมู่ 4 ต.บางแม่นาง อ.บางใหญ่ นนทบุรี 11140」
+- Phones: 「โทร 081-542-8799」 (big) · 「099-396-9187」 (smaller)
+- Hours: 「เปิด จันทร์–เสาร์ 08:00–17:00 · หยุดวันอาทิตย์」
+- Remove "รอยืนยันหมุดแผนที่" note. Keep the Google Maps button: 「นำทางด้วย Google Maps」
+
+### 2.11 Bottom CTA band
+- H2: 「รถเป็นรอย อย่าปล่อยไว้นาน」
+- Sub: 「เคลมประกันหรือเงินสด โทรถามได้เลย ไม่แพงอย่างที่คิด」
+- Big number: 「081-542-8799」
+- Buttons: 「โทรเลย」 · 「ส่งรูปทางไลน์」
+
+### 2.12 Footer
+- 「LAP ลีออโต้เพ้นท์ · เคาะ พ่น อบสี เคลมประกัน · รับทุกยี่ห้อ · บางใหญ่ นนทบุรี」
+- 「โทร 081-542-8799 · 099-396-9187」
+- 「© 2026 LAP ลีออโต้เพ้นท์」
+- Remove "ตัวอย่างเว็บไซต์ ยังไม่เผยแพร่จริง" and the top preview banner before launch.
+
+---
+
+## 3. New photo list (`/photos`)
+
+| File | What it shows | Used in |
+|---|---|---|
+| `paint-booth-porsche-spraying.jpg` | Painter spraying white Porsche in booth | Hero, Paint step 3 |
+| `fb-paint-booth-sedan-primer.jpg` | Sedan in primer inside booth | Services card 2, Work grid |
+| `ev-workshop-floor.jpg` | Workshop floor with EVs being repaired | Brands → EV card |
+| `tow-truck-van-arrival-front.jpg` | Black luxury van arriving on tow truck | Brands → Van card |
+| `tow-truck-van-arrival-rear.jpg` | Same van unloading at shop | Paint step 1 |
+| `fb-final-check-before-delivery.jpg` | Staff + customer checking SUV before handover | Team gallery, Work grid |
+| `team-briefing-1.jpg` / `-2.jpg` / `fb-team-briefing-3.jpg` | Morning team meeting | Team section |
+| `team-trip-group-1.jpg` / `-2.jpg` / `team-trip-candid.jpg` | Staff company trip (orange shirts) | Team trip strip |
+
+Alt text: write it in Thai, short, describing the photo (e.g. 「ช่างพ่นสีรถในห้องอบสี」).
